@@ -39,8 +39,10 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public void createStudent(String login, String name, String firstname, String password) {
+	public void createStudent(String login, String name, String firstname, String password, String idStudent) {
 		// Start of user code for method createStudent
+		Student student = new Student (login, name, firstname, password, idStudent);
+
 		// End of user code
 	}
 
@@ -61,6 +63,9 @@ public class Admin extends User {
 	 */
 	public void createGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
+		Group group;
+		group = new Group (idGroup, nbPart);
+		
 		// End of user code
 	}
 

@@ -30,10 +30,15 @@ public class Student extends User {
 
 	/**
 	 * The constructor.
+	 * @param password 
+	 * @param firstname 
+	 * @param name 
+	 * @param login 
 	 */
-	public Student() {
+	public Student(String login, String name, String firstname, String password, String idStudent) {
 		// Start of user code constructor for Student)
-		super();
+		super(login, name, firstname, password);
+		this.idStudent=idStudent;
 		// End of user code
 	}
 

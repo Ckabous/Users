@@ -22,7 +22,7 @@ public class Group {
 	/**
 	 * Description of the property nbPart.
 	 */
-	private HashSet<Real> nbPart = new HashSet<Real>();
+	private HashSet<Integer> nbPart = new HashSet<Integer>();
 
 	/**
 	 * Description of the property idStudent.
@@ -65,7 +65,7 @@ public class Group {
 	 * Returns nbPart.
 	 * @return nbPart 
 	 */
-	public HashSet<Real> getNbPart() {
+	public HashSet<Integer> getNbPart() {
 		return this.nbPart;
 	}
 

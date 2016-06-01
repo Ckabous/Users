@@ -3,6 +3,8 @@
  *******************************************************************************/
 package userModel;
 
+import java.util.Date;
+
 import userModel.User;
 // Start of user code (user defined imports)
 
@@ -40,7 +42,7 @@ public class Teacher extends User {
 	 * @param commentaire 
 	 * @param idTeacher 
 	 */
-	public void createContrainteH(String idContrainte, EDate dateDebut, EDate dateFin, String commentaire,
+	public void createContrainteH(String idContrainte, Date dateDebut, Date dateFin, String commentaire,
 			String idTeacher) {
 		// Start of user code for method createContrainteH
 		// End of user code

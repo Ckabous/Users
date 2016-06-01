@@ -40,9 +40,9 @@ public class User {
 	/**
 	 * The constructor.
 	 */
-	public User() {
+	public User(String login, String name, String firstname, String password) {
 		// Start of user code constructor for User)
-		super();
+
 		// End of user code
 	}
 
