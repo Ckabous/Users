@@ -35,10 +35,13 @@ public class Group {
 
 	/**
 	 * The constructor.
+	 * @param nbPart2 
+	 * @param idGroup2 
 	 */
-	public Group() {
+	public Group(String idGroup2, HashSet<Integer> nbPart2) {
 		// Start of user code constructor for Group)
-		super();
+		this.idGroup = idGroup2;
+		this.nbPart = nbPart2;
 		// End of user code
 	}
 

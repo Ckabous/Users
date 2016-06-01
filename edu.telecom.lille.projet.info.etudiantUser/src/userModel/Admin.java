@@ -3,6 +3,8 @@
  *******************************************************************************/
 package userModel;
 
+import java.util.HashSet;
+
 import userModel.User;
 // Start of user code (user defined imports)
 
@@ -25,10 +27,16 @@ public class Admin extends User {
 
 	/**
 	 * The constructor.
+	 * @param password 
+	 * @param firstname 
+	 * @param name 
+	 * @param idAdmin2 
+	 * @param login 
 	 */
-	public Admin() {
+	public Admin(String login, String idAdmin2, String name, String firstname, String password) {
 		// Start of user code constructor for Admin)
-		super();
+		super(login, name, firstname, password);
+		this.idAdmin = idAdmin2;
 		// End of user code
 	}
 
@@ -61,11 +69,9 @@ public class Admin extends User {
 	 * @param idGroup 
 	 * @param nbPart 
 	 */
-	public void createGroup(String idGroup, int nbPart) {
+	public void createGroup(String idGroup, HashSet<Integer> nbPart) {
 		// Start of user code for method createGroup
-		Group group;
-		group = new Group (idGroup, nbPart);
-		
+		Group group = new Group (idGroup, nbPart);
 		// End of user code
 	}
 
@@ -76,8 +82,9 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public void createTeacher(String login, String name, String firstname, String password) {
+	public void createTeacher(String login, String idTeacher, String name, String firstname, String password) {
 		// Start of user code for method createTeacher
+		Teacher teacher = new Teacher (login, idTeacher, name, firstname, password);
 		// End of user code
 	}
 
@@ -88,8 +95,9 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public void createAdmin(String login, String name, String firstname, String password) {
+	public void createAdmin(String login, String idAdmin, String name, String firstname, String password) {
 		// Start of user code for method createAdmin
+		Admin admin = new Admin (login, idAdmin, name, firstname, password);
 		// End of user code
 	}
 

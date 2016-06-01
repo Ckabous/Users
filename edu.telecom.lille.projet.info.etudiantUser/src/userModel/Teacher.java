@@ -27,10 +27,16 @@ public class Teacher extends User {
 
 	/**
 	 * The constructor.
+	 * @param password 
+	 * @param firstname 
+	 * @param name 
+	 * @param idTeacher2 
+	 * @param login 
 	 */
-	public Teacher() {
+	public Teacher(String login, String idTeacher2, String name, String firstname, String password) {
 		// Start of user code constructor for Teacher)
-		super();
+		super(login, name, firstname, password);
+		this.idTeacher = idTeacher2;
 		// End of user code
 	}
 

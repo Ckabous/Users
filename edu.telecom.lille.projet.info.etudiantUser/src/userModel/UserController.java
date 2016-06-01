@@ -12,7 +12,7 @@ package userModel;
  * 
  * @author ckabous
  */
-private class UserController {
+class UserController {
 	// Start of user code (user defined attributes for UserController)
 
 	// End of user code
