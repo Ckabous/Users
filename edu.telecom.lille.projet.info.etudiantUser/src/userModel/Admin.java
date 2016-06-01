@@ -69,7 +69,7 @@ public class Admin extends User {
 	 * @param idGroup 
 	 * @param nbPart 
 	 */
-	public void createGroup(String idGroup, HashSet<Integer> nbPart) {
+	public void createGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
 		Group group = new Group (idGroup, nbPart);
 		// End of user code

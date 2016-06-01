@@ -3,6 +3,8 @@
  *******************************************************************************/
 package userModel;
 
+import java.util.Date;
+import java.text.SimpleDateFormat;
 // Start of user code (user defined imports)
 
 // End of user code
@@ -16,12 +18,12 @@ public class ContrainteH {
 	/**
 	 * Description of the property dateDebut.
 	 */
-	private String dateDebut = "";
+	private Date dateDebut =new Date() ;
 
 	/**
 	 * Description of the property dateFin.
 	 */
-	private String dateFin = "";
+	private Date dateFin = new Date();
 
 	/**
 	 * Description of the property idContrainte.
@@ -39,10 +41,17 @@ public class ContrainteH {
 
 	/**
 	 * The constructor.
+	 * @param commentaire2 
+	 * @param dateFin2 
+	 * @param dateDebut2 
+	 * @param idContrainte2 
 	 */
-	public ContrainteH() {
+	public ContrainteH(String idContrainte2, Date dateDebut2, Date dateFin2, String commentaire2) {
 		// Start of user code constructor for ContrainteH)
-		super();
+		this.idContrainte = idContrainte2;
+		this.dateDebut = dateDebut2;
+		this.dateFin= dateFin2;
+		this.commentaire = commentaire2;
 		// End of user code
 	}
 
@@ -53,7 +62,7 @@ public class ContrainteH {
 	 * Returns dateDebut.
 	 * @return dateDebut 
 	 */
-	public String getDateDebut() {
+	public Date getDateDebut() {
 		return this.dateDebut;
 	}
 
@@ -61,7 +70,7 @@ public class ContrainteH {
 	 * Sets a value to attribute dateDebut. 
 	 * @param newDateDebut 
 	 */
-	public void setDateDebut(String newDateDebut) {
+	public void setDateDebut(Date newDateDebut) {
 		this.dateDebut = newDateDebut;
 	}
 
@@ -69,7 +78,7 @@ public class ContrainteH {
 	 * Returns dateFin.
 	 * @return dateFin 
 	 */
-	public String getDateFin() {
+	public Date getDateFin() {
 		return this.dateFin;
 	}
 
@@ -77,7 +86,7 @@ public class ContrainteH {
 	 * Sets a value to attribute dateFin. 
 	 * @param newDateFin 
 	 */
-	public void setDateFin(String newDateFin) {
+	public void setDateFin(Date newDateFin) {
 		this.dateFin = newDateFin;
 	}
 

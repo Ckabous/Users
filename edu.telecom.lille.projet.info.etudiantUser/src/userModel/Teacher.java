@@ -51,6 +51,7 @@ public class Teacher extends User {
 	public void createContrainteH(String idContrainte, Date dateDebut, Date dateFin, String commentaire,
 			String idTeacher) {
 		// Start of user code for method createContrainteH
+		ContrainteH contrainte = new ContrainteH(idContrainte, dateDebut, dateFin, commentaire);
 		// End of user code
 	}
 

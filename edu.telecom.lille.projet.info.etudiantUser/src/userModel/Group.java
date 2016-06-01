@@ -22,7 +22,7 @@ public class Group {
 	/**
 	 * Description of the property nbPart.
 	 */
-	private HashSet<Integer> nbPart = new HashSet<Integer>();
+	private int nbPart;
 
 	/**
 	 * Description of the property idStudent.
@@ -38,7 +38,7 @@ public class Group {
 	 * @param nbPart2 
 	 * @param idGroup2 
 	 */
-	public Group(String idGroup2, HashSet<Integer> nbPart2) {
+	public Group(String idGroup2, int nbPart2) {
 		// Start of user code constructor for Group)
 		this.idGroup = idGroup2;
 		this.nbPart = nbPart2;
@@ -68,7 +68,7 @@ public class Group {
 	 * Returns nbPart.
 	 * @return nbPart 
 	 */
-	public HashSet<Integer> getNbPart() {
+	public int getNbPart() {
 		return this.nbPart;
 	}
 
