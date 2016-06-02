@@ -47,10 +47,10 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public void createStudent(String login, String name, String firstname, String password, String idStudent) {
+	public Student createStudent(String login, String name, String firstname, String password, String idStudent, String idGroup) {
 		// Start of user code for method createStudent
-		Student student = new Student (login, name, firstname, password, idStudent);
-
+		Student student = new Student (login, name, firstname, password, idStudent, idGroup);
+		return student;
 		// End of user code
 	}
 
@@ -61,6 +61,7 @@ public class Admin extends User {
 	 */
 	public void associateStudentGroup(String idStudent, String idGroup) {
 		// Start of user code for method associateStudentGroup
+		Student student = new Student(login, idStudent, surname, firstname, password, idGroup);
 		// End of user code
 	}
 
@@ -69,9 +70,10 @@ public class Admin extends User {
 	 * @param idGroup 
 	 * @param nbPart 
 	 */
-	public void createGroup(String idGroup, int nbPart) {
+	public Group createGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
 		Group group = new Group (idGroup, nbPart);
+		return group;
 		// End of user code
 	}
 
@@ -81,10 +83,12 @@ public class Admin extends User {
 	 * @param name 
 	 * @param firstname 
 	 * @param password 
+	 * @return 
 	 */
-	public void createTeacher(String login, String idTeacher, String name, String firstname, String password) {
+	public Teacher createTeacher(String login, String idTeacher, String name, String firstname, String password) {
 		// Start of user code for method createTeacher
 		Teacher teacher = new Teacher (login, idTeacher, name, firstname, password);
+		return teacher;
 		// End of user code
 	}
 
@@ -95,9 +99,10 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public void createAdmin(String login, String idAdmin, String name, String firstname, String password) {
+	public Admin createAdmin(String login, String idAdmin, String name, String firstname, String password) {
 		// Start of user code for method createAdmin
 		Admin admin = new Admin (login, idAdmin, name, firstname, password);
+		return admin;
 		// End of user code
 	}
 

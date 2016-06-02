@@ -16,22 +16,22 @@ public class User {
 	/**
 	 * Description of the property login.
 	 */
-	private String login = "";
+	protected String login = "";
 
 	/**
 	 * Description of the property surname.
 	 */
-	private String surname = "";
+	protected String surname = "";
 
 	/**
 	 * Description of the property firstname.
 	 */
-	private String firstname = "";
+	protected String firstname = "";
 
 	/**
 	 * Description of the property password.
 	 */
-	private String password = "";
+	protected String password = "";
 
 	// Start of user code (user defined attributes for User)
 

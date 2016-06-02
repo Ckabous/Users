@@ -22,7 +22,7 @@ public class Student extends User {
 	/**
 	 * Description of the property idGroup.
 	 */
-	private String idGroup = "";
+	private String idGroup = "null";
 
 	// Start of user code (user defined attributes for Student)
 
@@ -34,11 +34,13 @@ public class Student extends User {
 	 * @param firstname 
 	 * @param name 
 	 * @param login 
+	 * @param idGroup2 
 	 */
-	public Student(String login, String idStudent, String name, String firstname, String password) {
+	public Student(String login, String idStudent, String name, String firstname, String password, String idGroup2) {
 		// Start of user code constructor for Student)
 		super(login, name, firstname, password);
 		this.idStudent=idStudent;
+		this.idGroup=idGroup2;
 		// End of user code
 	}
 
