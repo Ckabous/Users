@@ -20,15 +20,21 @@ public class Main {
 	 * 			Les arguments donnés en entrée du programme.
 	 * 
 	 */
-	public static void main(String[] args) {
-		final String file="usersDB.xml";
-		UserController UC= new UserController(file);
-		UC.addAdmin("su","KF",0001,"Kevin", "Flynn",  "@tron");
-		UC.addAdmin("su","KR",0002,"Keanu", "Reeves",  "redpill");
-		UC.addTeacher("su","GS",1001,"Grand", "Schtroumpf",  "salsepareille");
-		UC.addTeacher("su","MF",1002,"Morgan", "Freeman",  "iknowall");
-		UC.addStudent("su","BS",2001,"Buffy", "Summers",  "stake");
-		UC.addStudent("su","NL",2002,"Nicolas", "Lepetit",  "prout");
-		UserController.saveDB();
+	public static void main(String args[]){
+		/*final String userfile="userDB.xml";
+		final String tTfile="timeTableDB.xml";
+	    final UserController userController=new UserController(userfile);
+	    final TimeTableController tTController=new TimeTableController(tTfile);
+		java.awt.EventQueue.invokeLater(new Runnable() {
+	         public void run() {
+	            createAndShowUI(userController,tTController);
+	         }*/
+		final String userfile="userDB.xml";
+		UserDB userDB=new UserDB(userfile);
+		userDB.addTeacher("Lol","1024","Tony","Bouboule","Globe");
+		userDB.addStudent("Deux","322","Valve","Dota","42","MOBA");
+		userDB.addAdmin(" login"," idAdmin", " surname", " firstname"," password");
+		System.out.println(userDB.users);
+	      };
 	}
-}
+

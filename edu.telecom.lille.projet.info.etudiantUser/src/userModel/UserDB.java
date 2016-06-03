@@ -31,9 +31,9 @@ public class UserDB {
 	 * 
 	 */
 	
-	public static HashMap<String,User> users;
-	public static HashMap<String,Group> groups;
-	public static HashMap<String,ContrainteH> horaire;
+	public HashMap<String,User> users;
+	public HashMap<String,Group> groups;
+	public HashMap<String,ContrainteH> horaire;
 	
 	private String file;
 	
@@ -50,6 +50,7 @@ public class UserDB {
 		//TODO Fonction à modifier
 		super();
 		Admin admin = new Admin ("su", "0001", "su", "su", "superUser" );
+		users=new HashMap<String,User>();
 		users.put("su", admin);
 		this.setFile(file);
 	}
@@ -79,9 +80,8 @@ public class UserDB {
 		//creer l'instance java
 		Admin admin= userModel.Admin.createAdmin(login,idAdmin,surname,firstname,password);
 		users.put(login, admin);
-		userController.UserController.saveDB();
+		//saveDB();
 		//mettre dans ta base de donnee
-		
 		
 		return true;
 	}
@@ -90,7 +90,7 @@ public class UserDB {
 		// Start of user code for method createTeacher
 		Teacher teacher = userModel.Admin.createTeacher(login, idTeacher, name, firstname, password);
 		users.put(login,teacher);
-		userController.UserController.saveDB();
+		//userController.UserController.saveDB();
 		// End of user code
 	}
 	
@@ -98,7 +98,7 @@ public class UserDB {
 		// Start of user code for method createGroup
 		Group group = userModel.Admin.createGroup (idGroup, nbPart);
 		groups.put(idGroup, group);
-		userController.UserController.saveDB();
+		//userController.UserController.saveDB();
 		// End of user code
 	}
 	
@@ -106,7 +106,7 @@ public class UserDB {
 		// Start of user code for method createStudent
 		Student student = userModel.Admin.createStudent (login, name, firstname, password, idStudent, idGroup);
 		users.put(login, student);
-		userController.UserController.saveDB();
+		//userController.UserController.saveDB();
 		// End of user code
 	}
 	
@@ -115,7 +115,7 @@ public class UserDB {
 		// Start of user code for method createContrainteH
 		ContrainteH contrainte = userModel.Teacher.createContrainteH(idContrainte, dateDebut, dateFin, commentaire, idTeacher);
 		horaire.put(idContrainte, contrainte);
-		userController.UserController.saveDB();
+		//userController.UserController.saveDB();
 		// End of user code
 	}
 }

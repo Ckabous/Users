@@ -33,13 +33,13 @@ public class UserController implements IUserController
 	 * 
 	 */
 	
-	private UserDB userDB1=null;
+	/*private UserDB userDB1=null;
 	Element rootElt = new Element("Users");
 	org.jdom2.Document document = new Document(rootElt);
 		Element UserModelElt = new Element("UserModel");
 			Element AdminElt = new Element("Admin");
 		 
-	rootElt.addcontent(UserModelElt);
+	rootElt.addcontent(UserModelElt);*/
 	
 	
 	private UserDB userDB=null;
@@ -58,8 +58,8 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserName(String userLogin) {
-		User user = userModel.UserDB.users.get(userLogin);
-		return user.getSurname();
+		//User user = userModel.UserDB.users.get(userLogin);
+		//return user.getSurname();
 		
 		
 		return null;
@@ -67,10 +67,10 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserClass(String userLogin, String userPwd) {
-		User user = UserDB.users.get(userLogin);
+		/*User user = UserDB.users.get(userLogin);
 		if (user.getLogin()!="null"&&userPwd==user.getPassword());
 			if(user.getLogin())
-		
+		*/
 		return null;
 	}
 
@@ -180,9 +180,8 @@ public class UserController implements IUserController
 			
 	}
 
-	@Override
-	public static boolean saveDB() {
-		private UserDB userDB1=null;
+	public boolean saveDB() {
+		/*private UserDB userDB1=null;
 		Element rootElt = new Element("Users");
 		org.jdom2.Document document = new Document(rootElt);
 			Element UserModelElt = new Element("UserModel");
@@ -194,16 +193,17 @@ public class UserController implements IUserController
 					new XMLOutputter(Format.getPrettyFormat());
 			sortie.output(document, new FileOutputStream("Users.xml"));
 			
-		}catch (IOException e){}
+		}catch (IOException e){}*/
 		return false;
 	}
 
 	public UserDB getUserDB() {
-		return userDB1;
+		return userDB;
+		//return userDB1;
 	}
 
 	public void setUserDB(UserDB userDB) {
-		this.userDB1 = userDB;
+		this.userDB = userDB;
 	}
 	
 	
