@@ -49,8 +49,8 @@ public class UserDB {
 	public UserDB(String file){
 		//TODO Fonction à modifier
 		super();
-		Admin admin = new Admin ('su', )
-		users.put('1', );
+		Admin admin = new Admin ("su", "0001", "su", "su", "superUser" );
+		users.put("su", admin);
 		this.setFile(file);
 	}
 	
@@ -79,7 +79,7 @@ public class UserDB {
 		//creer l'instance java
 		Admin admin= userModel.Admin.createAdmin(login,idAdmin,surname,firstname,password);
 		users.put(login, admin);
-		saveDB();
+		userController.UserController.saveDB();
 		//mettre dans ta base de donnee
 		
 		
@@ -90,15 +90,15 @@ public class UserDB {
 		// Start of user code for method createTeacher
 		Teacher teacher = userModel.Admin.createTeacher(login, idTeacher, name, firstname, password);
 		users.put(login,teacher);
-		saveDB();
+		userController.UserController.saveDB();
 		// End of user code
 	}
 	
 	public void addGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
 		Group group = userModel.Admin.createGroup (idGroup, nbPart);
-		groups.put(idGroup);
-		saveDB();
+		groups.put(idGroup, group);
+		userController.UserController.saveDB();
 		// End of user code
 	}
 	
@@ -106,7 +106,7 @@ public class UserDB {
 		// Start of user code for method createStudent
 		Student student = userModel.Admin.createStudent (login, name, firstname, password, idStudent, idGroup);
 		users.put(login, student);
-		saveDB();
+		userController.UserController.saveDB();
 		// End of user code
 	}
 	
@@ -115,7 +115,7 @@ public class UserDB {
 		// Start of user code for method createContrainteH
 		ContrainteH contrainte = userModel.Teacher.createContrainteH(idContrainte, dateDebut, dateFin, commentaire, idTeacher);
 		horaire.put(idContrainte, contrainte);
-		saveDB();
+		userController.UserController.saveDB();
 		// End of user code
 	}
 }

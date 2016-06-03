@@ -33,23 +33,23 @@ public class UserController implements IUserController
 	 * 
 	 */
 	
-	/*private UserDB userDB1=null;
+	private UserDB userDB1=null;
 	Element rootElt = new Element("Users");
 	org.jdom2.Document document = new Document(rootElt);
 		Element UserModelElt = new Element("UserModel");
 			Element AdminElt = new Element("Admin");
 		 
-	rootElt.addcontent(UserModelElt);*/
+	rootElt.addcontent(UserModelElt);
 	
 	
 	private UserDB userDB=null;
 	
 	
 	/**
-	 * Constructeur de controleur d'utilisateurs créant la base de données d'utilisateurs
+	 * Constructeur de controleur d'utilisateurs creant la base de donnees d'utilisateurs
 	 * 
 	 * @param userfile
-	 * 		Fichier XML contenant la base de données d'utilisateurs
+	 * 		Fichier XML contenant la base de donnees d'utilisateurs
 	 */
 	public UserController(String userfile){
 		UserDB userDB=new UserDB(userfile);
@@ -58,7 +58,8 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserName(String userLogin) {
-		
+		User user = userModel.UserDB.users.get(userLogin);
+		return user.getSurname();
 		
 		
 		return null;
@@ -66,7 +67,9 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserClass(String userLogin, String userPwd) {
-		User user = User.getUser;
+		User user = UserDB.users.get(userLogin);
+		if (user.getLogin()!="null"&&userPwd==user.getPassword());
+			if(user.getLogin())
 		
 		return null;
 	}
@@ -178,7 +181,14 @@ public class UserController implements IUserController
 	}
 
 	@Override
-	public boolean saveDB() {
+	public static boolean saveDB() {
+		private UserDB userDB1=null;
+		Element rootElt = new Element("Users");
+		org.jdom2.Document document = new Document(rootElt);
+			Element UserModelElt = new Element("UserModel");
+				Element AdminElt = new Element("Admin");
+			 
+		rootElt.addcontent(UserModelElt);
 		try{
 			XMLOutputter sortie =
 					new XMLOutputter(Format.getPrettyFormat());
