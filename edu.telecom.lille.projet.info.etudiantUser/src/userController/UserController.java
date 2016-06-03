@@ -2,9 +2,9 @@ package userController;
 
 import userModel.UserDB;
 /**
- * Cette classe est le contrôleur d'utilisateurs que vous devez implémenter. 
- * Elle contient un attribut correspondant à la base de données utilisateurs que vous allez créer.
- * Elle contient toutes les fonctions de l'interface IUserController que vous devez implémenter.
+ * Cette classe est le controleur d'utilisateurs que vous devez implementer. 
+ * Elle contient un attribut correspondant a� la base de donnees utilisateurs que vous allez creer.
+ * Elle contient toutes les fonctions de l'interface IUserController que vous devez implementer.
  * 
  * @author Jose Mennesson (Mettre à jour)
  * @version 04/2016 (Mettre à jour)

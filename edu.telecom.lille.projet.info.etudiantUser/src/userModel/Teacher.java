@@ -48,10 +48,11 @@ public class Teacher extends User {
 	 * @param commentaire 
 	 * @param idTeacher 
 	 */
-	public void createContrainteH(String idContrainte, Date dateDebut, Date dateFin, String commentaire,
+	public static ContrainteH createContrainteH(String idContrainte, Date dateDebut, Date dateFin, String commentaire,
 			String idTeacher) {
 		// Start of user code for method createContrainteH
 		ContrainteH contrainte = new ContrainteH(idContrainte, dateDebut, dateFin, commentaire);
+		return (contrainte);
 		// End of user code
 	}
 

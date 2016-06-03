@@ -47,7 +47,7 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public Student createStudent(String login, String name, String firstname, String password, String idStudent, String idGroup) {
+	public static Student createStudent(String login, String name, String firstname, String password, String idStudent, String idGroup) {
 		// Start of user code for method createStudent
 		Student student = new Student (login, name, firstname, password, idStudent, idGroup);
 		return student;
@@ -70,7 +70,7 @@ public class Admin extends User {
 	 * @param idGroup 
 	 * @param nbPart 
 	 */
-	public Group createGroup(String idGroup, int nbPart) {
+	public static Group createGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
 		Group group = new Group (idGroup, nbPart);
 		return group;
@@ -85,7 +85,7 @@ public class Admin extends User {
 	 * @param password 
 	 * @return 
 	 */
-	public Teacher createTeacher(String login, String idTeacher, String name, String firstname, String password) {
+	public static Teacher createTeacher(String login, String idTeacher, String name, String firstname, String password) {
 		// Start of user code for method createTeacher
 		Teacher teacher = new Teacher (login, idTeacher, name, firstname, password);
 		return teacher;
@@ -99,7 +99,7 @@ public class Admin extends User {
 	 * @param firstname 
 	 * @param password 
 	 */
-	public Admin createAdmin(String login, String idAdmin, String name, String firstname, String password) {
+	public static Admin createAdmin(String login, String idAdmin, String name, String firstname, String password) {
 		// Start of user code for method createAdmin
 		Admin admin = new Admin (login, idAdmin, name, firstname, password);
 		return admin;

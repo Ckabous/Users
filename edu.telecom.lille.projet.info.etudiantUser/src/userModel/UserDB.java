@@ -70,7 +70,7 @@ public class UserDB {
 	}
 	public boolean addAdmin(String login,String idAdmin, String surname, String firstname, String password){
 		//creer l'instance java
-		Admin admin=new Admin(login,idAdmin,surname,firstname,password);
+		Admin admin= userModel.Admin.createAdmin(login,idAdmin,surname,firstname,password);
 		
 		//mettre dans ta base de donnee
 		
@@ -80,7 +80,7 @@ public class UserDB {
 	
 	public void addTeacher(String login, String idTeacher, String name, String firstname, String password) {
 		// Start of user code for method createTeacher
-		Teacher teacher = createTeacher(login, idTeacher, name, firstname, password);
+		Teacher teacher = userModel.Admin.createTeacher(login, idTeacher, name, firstname, password);
 		users.put(login,teacher);
 		saveDB();
 		// End of user code
@@ -88,13 +88,13 @@ public class UserDB {
 	
 	public void addGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
-		Group group = createGroup (idGroup, nbPart);
+		Group group = userModel.Admin.createGroup (idGroup, nbPart);
 		// End of user code
 	}
 	
 	public void addStudent(String login, String name, String firstname, String password, String idStudent, String idGroup) {
 		// Start of user code for method createStudent
-		Student student = new Student (login, name, firstname, password, idStudent, idGroup);
+		Student student = userModel.Admin.createStudent (login, name, firstname, password, idStudent, idGroup);
 
 		// End of user code
 	}
@@ -102,7 +102,7 @@ public class UserDB {
 	public void addContrainteH(String idContrainte, Date dateDebut, Date dateFin, String commentaire,
 			String idTeacher) {
 		// Start of user code for method createContrainteH
-		ContrainteH contrainte = new ContrainteH(idContrainte, dateDebut, dateFin, commentaire);
+		ContrainteH contrainte = userModel.Teacher.createContrainteH(idContrainte, dateDebut, dateFin, commentaire, idTeacher);
 		// End of user code
 	}
 }

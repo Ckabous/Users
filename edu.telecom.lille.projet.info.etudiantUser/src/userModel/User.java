@@ -42,7 +42,12 @@ public class User {
 	 */
 	public User(String login, String name, String firstname, String password) {
 		// Start of user code constructor for User)
-
+		
+		this.login = login;
+		this.surname = name;
+		this.firstname= firstname;
+		this.password = password;
+		
 		// End of user code
 	}
 
