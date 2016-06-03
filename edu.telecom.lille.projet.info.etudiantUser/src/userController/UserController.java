@@ -1,13 +1,18 @@
 package userController;
 
-import java.io.File;
 import java.util.Iterator;
 import java.util.List;
 
+import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.input.SAXBuilder;
+import org.jdom2.output.Format;
+import org.jdom2.output.XMLOutputter;
+
+import java.io.*;
 
 import userModel.UserDB;
+import userModel.*;
 /**
  * Cette classe est le controleur d'utilisateurs que vous devez implementer. 
  * Elle contient un attribut correspondant a† la base de donnees utilisateurs que vous allez creer.
@@ -27,6 +32,16 @@ public class UserController implements IUserController
 	 * Contient une instance de base de donn√©es d'utilisateurs
 	 * 
 	 */
+	
+	/*private UserDB userDB1=null;
+	Element rootElt = new Element("Users");
+	org.jdom2.Document document = new Document(rootElt);
+		Element UserModelElt = new Element("UserModel");
+			Element AdminElt = new Element("Admin");
+		 
+	rootElt.addcontent(UserModelElt);*/
+	
+	
 	private UserDB userDB=null;
 	
 	
@@ -51,7 +66,8 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserClass(String userLogin, String userPwd) {
-		// TODO Auto-generated method stub
+		User user = User.getUser;
+		
 		return null;
 	}
 
@@ -163,16 +179,21 @@ public class UserController implements IUserController
 
 	@Override
 	public boolean saveDB() {
-		// TODO Auto-generated method stub
+		try{
+			XMLOutputter sortie =
+					new XMLOutputter(Format.getPrettyFormat());
+			sortie.output(document, new FileOutputStream("Users.xml"));
+			
+		}catch (IOException e){}
 		return false;
 	}
 
 	public UserDB getUserDB() {
-		return userDB;
+		return userDB1;
 	}
 
 	public void setUserDB(UserDB userDB) {
-		this.userDB = userDB;
+		this.userDB1 = userDB;
 	}
 	
 	

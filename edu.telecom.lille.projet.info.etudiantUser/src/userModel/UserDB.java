@@ -1,11 +1,14 @@
 package userModel;
 
 import java.util.Date;
+
 import java.util.HashMap;
 import java.io.*;
 import org.jdom2.*;
 import org.jdom2.output.*;
 import userModel.Admin;
+
+import userModel.*;
 
 /**
  * 
@@ -28,9 +31,9 @@ public class UserDB {
 	 * 
 	 */
 	
-	HashMap<String,User> users;
-	HashMap<String,Group> groups;
-	HashMap<String,ContrainteH> horaire;
+	public static HashMap<String,User> users;
+	public static HashMap<String,Group> groups;
+	public static HashMap<String,ContrainteH> horaire;
 	
 	private String file;
 	
@@ -46,6 +49,8 @@ public class UserDB {
 	public UserDB(String file){
 		//TODO Fonction à modifier
 		super();
+		Admin admin = new Admin ('su', )
+		users.put('1', );
 		this.setFile(file);
 	}
 	
