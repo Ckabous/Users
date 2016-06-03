@@ -1,5 +1,12 @@
 package userController;
 
+import java.io.File;
+import java.util.Iterator;
+import java.util.List;
+
+import org.jdom2.Element;
+import org.jdom2.input.SAXBuilder;
+
 import userModel.UserDB;
 /**
  * Cette classe est le controleur d'utilisateurs que vous devez implementer. 
@@ -36,7 +43,9 @@ public class UserController implements IUserController
 
 	@Override
 	public String getUserName(String userLogin) {
-		// TODO Auto-generated method stub
+		
+		
+		
 		return null;
 	}
 
@@ -129,22 +138,27 @@ public class UserController implements IUserController
 
 	@Override
 	public boolean loadDB() {
-		
-		
 		org.jdom2.Document document = null ;
 		Element rootElt;
 		SAXBuilder sxb = new SAXBuilder();
+		
 		try{
-		document = sxb.build(new File("Animaux.xml"));
-		}catch(Exception e){}
+			document = sxb.build(new File("Users.xml"));
+		}
+		catch(Exception e){}
+		
 		if(document!=null){
-		rootElt = document.getRootElement();
-		List<Element> chienElts = rootElt.getChildren("Chien");
-		Iterator<Element> itChien = chienElts.iterator();
-		while(ig.hasNext()){
-		Element unChienElt = (Element)itChien.next();
-		String nomDunChien=unChienElt.getChild("nom").getText();
+			rootElt = document.getRootElement();
+			List<Element> adminElts = rootElt.getChildren("Admin");
+			Iterator<Element> itAdmin = adminElts.iterator();
+			while(itAdmin.hasNext()){
+					Element anAdminElt = (Element)itAdmin.next();
+					String idAdmin=anAdminElt.getChild("idAdmin").getText();
+			}
+		}
+		
 		return false;
+			
 	}
 
 	@Override
