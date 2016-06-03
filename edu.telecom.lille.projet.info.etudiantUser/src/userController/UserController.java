@@ -129,7 +129,21 @@ public class UserController implements IUserController
 
 	@Override
 	public boolean loadDB() {
-		// TODO Auto-generated method stub
+		
+		
+		org.jdom2.Document document = null ;
+		Element rootElt;
+		SAXBuilder sxb = new SAXBuilder();
+		try{
+		document = sxb.build(new File("Animaux.xml"));
+		}catch(Exception e){}
+		if(document!=null){
+		rootElt = document.getRootElement();
+		List<Element> chienElts = rootElt.getChildren("Chien");
+		Iterator<Element> itChien = chienElts.iterator();
+		while(ig.hasNext()){
+		Element unChienElt = (Element)itChien.next();
+		String nomDunChien=unChienElt.getChild("nom").getText();
 		return false;
 	}
 

@@ -29,6 +29,8 @@ public class UserDB {
 	 */
 	
 	HashMap<String,User> users;
+	HashMap<String,Group> groups;
+	HashMap<String,ContrainteH> horaire;
 	
 	private String file;
 	
@@ -71,7 +73,8 @@ public class UserDB {
 	public boolean addAdmin(String login,String idAdmin, String surname, String firstname, String password){
 		//creer l'instance java
 		Admin admin= userModel.Admin.createAdmin(login,idAdmin,surname,firstname,password);
-		
+		users.put(login, admin);
+		saveDB();
 		//mettre dans ta base de donnee
 		
 		
@@ -89,13 +92,16 @@ public class UserDB {
 	public void addGroup(String idGroup, int nbPart) {
 		// Start of user code for method createGroup
 		Group group = userModel.Admin.createGroup (idGroup, nbPart);
+		groups.put(idGroup);
+		saveDB();
 		// End of user code
 	}
 	
 	public void addStudent(String login, String name, String firstname, String password, String idStudent, String idGroup) {
 		// Start of user code for method createStudent
 		Student student = userModel.Admin.createStudent (login, name, firstname, password, idStudent, idGroup);
-
+		users.put(login, student);
+		saveDB();
 		// End of user code
 	}
 	
@@ -103,6 +109,8 @@ public class UserDB {
 			String idTeacher) {
 		// Start of user code for method createContrainteH
 		ContrainteH contrainte = userModel.Teacher.createContrainteH(idContrainte, dateDebut, dateFin, commentaire, idTeacher);
+		horaire.put(idContrainte, contrainte);
+		saveDB();
 		// End of user code
 	}
 }
